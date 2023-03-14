@@ -1,4 +1,3 @@
-,,,,,,,,,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Standard,Expected,Expected,Expected,Expected,Expected,,-additional
 Rk,Player,Nation,Pos,Squad,Comp,Age,Born,90s,Gls,Sh,SoT,SoT%,Sh/90,SoT/90,G/Sh,G/SoT,Dist,FK,PK,PKatt,xG,npxG,npxG/Sh,G-xG,np:G-xG,Matches,-9999
 1,Max Aarons,eng ENG,DF,Norwich City,eng Premier League,21,2000,32.0,0,13,2,15.4,0.41,0.06,0.00,0.00,19.9,0,0,0,0.9,0.9,0.07,-0.9,-0.9,Matches,774cf58b
 2,Yunis Abdelhamid,ma MAR,DF,Reims,fr Ligue 1,33,1987,33.1,2,18,6,33.3,0.54,0.18,0.11,0.33,18.3,0,0,0,1.5,1.5,0.08,+0.5,+0.5,Matches,32c2d95f
