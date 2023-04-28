@@ -250,12 +250,14 @@ ui = fluidPage(
                         mainPanel(
                           fluidRow(
                             h3("Cluster Result"),
-                            plotlyOutput("Clures", height = "600px"),
-                            h3("Players"),
-                            dataTableOutput("player")
+                            plotlyOutput("Clures", height = "500px")
                           )
                         )
-                      )
+                      ),
+                      column(6, h3("Player Information"),
+                             dataTableOutput("player")),
+                      column(6, h3("Cluster Explanation by PCs"),
+                             plotlyOutput("box", height = "600px"))
              )
   )
 )
@@ -508,11 +510,22 @@ server <- function(input, output, session) {
     
     players
   })
+  
+  # Boxplot
+  output$box = renderPlotly({
+    
+    pbox = scores_pca %>%
+      mutate(cluster = factor(km15$cluster)) %>%
+      pivot_longer(PC1:PC9) %>%
+      select(Player, Pos, name, value, cluster) %>%
+      ggplot() +
+      geom_boxplot(aes(x = name, y = value, col=name), outlier.alpha = 0) +
+      facet_wrap(~ cluster, nc=2) + 
+      theme(legend.position = "none") +
+      labs(x="", y="")
+    ggplotly(pbox)
+  })
 }
 
 ##### RUN #####
 shinyApp(ui, server)
-
-
-
-
